@@ -8,14 +8,15 @@ import { Metadata } from 'next';
 
 // ページパラメータの型定義
 interface PageProps {
-    params: {
+    params: Promise<{
         category: string;
         slug: string;
-    };
+    }>;
 }
 
 // 動的メタデータの生成
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+    const params = await props.params;
     const category = params.category;
     const slug = params.slug;
 
@@ -63,7 +64,7 @@ export async function generateStaticParams() {
 type ComponentProps = {
     children?: React.ReactNode;
     className?: string;
-    [key: string]: any;
+    [key: string]: unknown;
 };
 
 const components = {
@@ -80,8 +81,8 @@ const components = {
     img: (props: ComponentProps) => (
         <div className="my-6">
             <Image
-                src={props.src}
-                alt={props.alt || ''}
+                src={props.src as string}
+                alt={(props.alt as string) || ''}
                 className="rounded-lg mx-auto"
                 width={700}
                 height={400}
@@ -104,7 +105,8 @@ function getCategoryName(category: string): string {
     return categoryMap[category] || category;
 }
 
-export default async function ArticlePage({ params }: PageProps) {
+export default async function ArticlePage(props: PageProps) {
+    const params = await props.params;
     const { category, slug } = params;
 
     try {

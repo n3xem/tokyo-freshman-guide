@@ -9,6 +9,6 @@ export const metadata = {
 export default async function HousingPage() {
     // [category]ページを再利用して住まいカテゴリーのコンテンツを表示
     return (
-        <CategoryPage params={{ category: 'housing' }} />
+        <CategoryPage params={Promise.resolve({ category: 'housing' })} />
     );
 } 

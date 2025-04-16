@@ -7,9 +7,9 @@ import { Metadata } from 'next';
 
 // ページパラメータの型定義
 interface PageProps {
-    params: {
+    params: Promise<{
         category: string;
-    };
+    }>;
 }
 
 // カテゴリー名を日本語に変換
@@ -39,7 +39,8 @@ function getCategoryDescription(category: string): string {
 }
 
 // 動的メタデータの生成
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+    const params = await props.params;
     const { category } = params;
     const categoryName = getCategoryName(category);
 
@@ -49,7 +50,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
 }
 
-export default async function CategoryPage({ params }: PageProps) {
+export default async function CategoryPage(props: PageProps) {
+    const params = await props.params;
     const { category } = params;
 
     // 有効なカテゴリーか確認
