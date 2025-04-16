@@ -1,0 +1,87 @@
+<svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="500" height="400" fill="#f5f9ff"/>
+
+  <!-- 財布・貯金箱 -->
+  <g class="wallet">
+    <!-- 財布 -->
+    <rect x="190" y="300" width="120" height="80" rx="10" fill="#8d6e63" stroke="#5d4037" stroke-width="2"/>
+    <rect x="190" y="330" width="120" height="10" fill="#5d4037"/>
+    <circle cx="250" cy="320" r="10" fill="#5d4037" stroke="#3e2723" stroke-width="1"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="2s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- お金（紙幣） -->
+  <g class="bill-1">
+    <rect x="100" y="-50" width="40" height="25" rx="2" fill="#c8e6c9" stroke="#4caf50" stroke-width="1"/>
+    <text x="120" y="-32" font-family="Arial" font-size="12" fill="#2e7d32" text-anchor="middle">¥</text>
+    <circle cx="110" cy="-38" r="5" fill="#a5d6a7" opacity="0.7"/>
+    <animateTransform attributeName="transform" type="translate" from="0 -50" to="0 450" dur="4s" begin="0s" repeatCount="indefinite"/>
+  </g>
+
+  <g class="bill-2">
+    <rect x="220" y="-30" width="40" height="25" rx="2" fill="#c8e6c9" stroke="#4caf50" stroke-width="1"/>
+    <text x="240" y="-12" font-family="Arial" font-size="12" fill="#2e7d32" text-anchor="middle">¥</text>
+    <circle cx="230" cy="-18" r="5" fill="#a5d6a7" opacity="0.7"/>
+    <animateTransform attributeName="transform" type="translate" from="0 -50" to="0 450" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+  </g>
+
+  <g class="bill-3">
+    <rect x="350" y="-80" width="40" height="25" rx="2" fill="#c8e6c9" stroke="#4caf50" stroke-width="1"/>
+    <text x="370" y="-62" font-family="Arial" font-size="12" fill="#2e7d32" text-anchor="middle">¥</text>
+    <circle cx="360" cy="-68" r="5" fill="#a5d6a7" opacity="0.7"/>
+    <animateTransform attributeName="transform" type="translate" from="0 -50" to="0 450" dur="4.5s" begin="1s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- お金（コイン） -->
+  <g class="coin-1">
+    <circle cx="160" cy="-20" r="15" fill="#ffd54f" stroke="#ffb300" stroke-width="1"/>
+    <text x="160" y="-15" font-family="Arial" font-size="12" fill="#ff6f00" text-anchor="middle">¥</text>
+    <animateTransform attributeName="transform" type="translate" from="0 -50" to="0 450" dur="3s" begin="0.2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 160 -20" to="360 160 -20" dur="3s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <g class="coin-2">
+    <circle cx="280" cy="-70" r="15" fill="#ffd54f" stroke="#ffb300" stroke-width="1"/>
+    <text x="280" y="-65" font-family="Arial" font-size="12" fill="#ff6f00" text-anchor="middle">¥</text>
+    <animateTransform attributeName="transform" type="translate" from="0 -50" to="0 450" dur="3.2s" begin="1.2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 280 -70" to="360 280 -70" dur="3.2s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <g class="coin-3">
+    <circle cx="400" cy="-40" r="15" fill="#ffd54f" stroke="#ffb300" stroke-width="1"/>
+    <text x="400" y="-35" font-family="Arial" font-size="12" fill="#ff6f00" text-anchor="middle">¥</text>
+    <animateTransform attributeName="transform" type="translate" from="0 -50" to="0 450" dur="2.8s" begin="0.8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 400 -40" to="360 400 -40" dur="2.8s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- グラフ -->
+  <g class="graph">
+    <rect x="80" y="200" width="150" height="100" fill="#ffffff" stroke="#e0e0e0" stroke-width="2"/>
+    <!-- グラフの棒 -->
+    <rect x="100" y="240" width="20" height="40" fill="#ef5350"/>
+    <rect x="130" y="220" width="20" height="60" fill="#42a5f5"/>
+    <rect x="160" y="200" width="20" height="80" fill="#66bb6a"/>
+    <rect x="190" y="180" width="20" height="100" fill="#ffa726"/>
+    <!-- 増加傾向を示す矢印 -->
+    <line x1="100" y1="260" x2="210" y2="160" stroke="#4caf50" stroke-width="2"/>
+    <polygon points="210,160 200,165 205,175" fill="#4caf50"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 5; 0 0" dur="3s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 貯金箱 -->
+  <g class="piggy-bank">
+    <ellipse cx="380" cy="250" rx="50" ry="40" fill="#f8bbd0" stroke="#ec407a" stroke-width="2"/>
+    <!-- 貯金箱の顔 -->
+    <circle cx="360" cy="240" r="5" fill="#000000"/>
+    <!-- 左目 -->
+    <circle cx="400" cy="240" r="5" fill="#000000"/>
+    <circle cx="470" cy="240" r="5" fill="#000000"/>
+    <!-- 右目 -->
+    <ellipse cx="450" cy="260" rx="10" ry="5" fill="#ec407a"/>
+    <!-- 鼻 -->
+    <!-- コインスロット -->
+    <rect x="450" y="220" width="20" height="3" fill="#ad1457"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -7; 0 0" dur="2.5s" repeatCount="indefinite"/>
+  </g>
+</svg>

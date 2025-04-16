@@ -49,3 +49,208 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* アニメーションスタイル */
+.tokyo-scene {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.tokyo-skyline {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.train {
+  position: absolute;
+  bottom: 75px; 
+  left: -200px;
+  z-index: 10;
+  animation: trainRide 20s linear infinite;
+}
+
+@keyframes trainRide {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.cloud {
+  position: absolute;
+  opacity: 0.9;
+  animation: floatCloud 30s linear infinite;
+}
+
+.cloud-1 {
+  top: 15%;
+  left: -100px;
+  animation-duration: 35s;
+}
+
+.cloud-2 {
+  top: 25%;
+  left: -150px;
+  animation-duration: 45s;
+  animation-delay: 5s;
+}
+
+.cloud-3 {
+  top: 10%;
+  left: -80px;
+  animation-duration: 40s;
+  animation-delay: 10s;
+}
+
+@keyframes floatCloud {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+.sun {
+  position: absolute;
+  top: 60px;
+  left: 120px;
+  width: 80px;
+  height: 80px;
+  background: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 50px #ffecb3;
+  animation: sunGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes sunGlow {
+  0% {
+    box-shadow: 0 0 30px #ffecb3;
+  }
+  100% {
+    box-shadow: 0 0 60px #ffecb3;
+  }
+}
+
+/* 住まい探しアニメーション */
+.housing-animation {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #e8f4fc;
+}
+
+.housing-animation svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 人のアニメーション */
+.person {
+  animation: walkAnimation 10s linear infinite;
+}
+
+@keyframes walkAnimation {
+  0% {
+    transform: translateX(-100px);
+  }
+  45% {
+    transform: translateX(200px);
+  }
+  50% {
+    transform: translateX(200px) scaleX(-1);
+  }
+  95% {
+    transform: translateX(-100px) scaleX(-1);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
+
+/* 腕と足のアニメーション */
+.arm-left, .leg-left {
+  animation: leftLimbAnimation 0.5s ease-in-out infinite alternate;
+}
+
+.arm-right, .leg-right {
+  animation: rightLimbAnimation 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes leftLimbAnimation {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes rightLimbAnimation {
+  0% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+/* 家のアニメーション */
+.house-1 {
+  animation: houseAnimation 3s ease-in-out infinite alternate;
+}
+
+.house-2 {
+  animation: houseAnimation 4s ease-in-out infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes houseAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Finance Animation */
+.finance-animation {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+
+.finance-animation svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+/* Lifestyle Animation */
+.lifestyle-animation {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+
+.lifestyle-animation svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
+  transform-origin: center;
+}
